@@ -1,15 +1,40 @@
 import React, {useEffect, useState}from 'react';
 import {Box, Button, Stack, TextField, Typography} from 
 '@mui/material';
-import {SearchOffSharp} from '@mui/icons-material';
+import { exerciseOptions, fetchData } from '../utils/fetchData';
+import Exercises from './Exercises';
 
 const SearchExercises = () => {
-    const [Search, setSearch]= useState('')
+    const [search, setSearch]= useState('')
+    const [exercises,setExercises]=useState([]);
+    const [bodyParts, setBodyParts]=useState([])
+
+    useEffect(()=> {
+      const fetchExercisesData=async () =>{
+        const bodyPartsData= await fetchData
+        ('https://exercisedb.p.rapidapi.com/exercises/bodyPartList',exerciseOptions);
+
+        setBodyParts(['all',...bodyPartsData]);
+      }
+
+      fetchExercisesData();
+    },[])
 
     const handleSearch=async () => {
-      if(Search) {
-        const ExercisesData=await fetchData(); 
-      }
+      if(search) {
+        const exercisesData=await fetchData
+        ('https://exercisedb.p.rapidapi.com/exercises',
+          exerciseOptions); 
+         
+          const searchedExercises= exercisesData.filter(
+            (Exercise)=> Exercise.name.toLowerCase().includes(search)
+            || Exercise.target.toLowerCase().includes(search)
+            || Exercise.equipment.toLowerCase().includes(search)
+            || Exercise.bodyPart.toLowerCase().includes(search)
+          );
+          setSearch('')
+          setExercises(searchedExercises);
+            }
     }
 
 
@@ -36,7 +61,7 @@ const SearchExercises = () => {
             borderRadius:'40px'
         }}
           height='76px'
-          value={Search}
+          value={search}
           onChange={(e)=> setSearch(e.target.
           value.toLowerCase())}
           placeholder='Search Exercises'
@@ -58,6 +83,10 @@ const SearchExercises = () => {
           
           search
         </Button>
+       </Box>
+       <Box sx={{ position: 'relative', width: '100%', p: '20px'}}>
+            <HorizontalScrollbar data={bodyParts} />
+
        </Box>
     </Stack>
   )
