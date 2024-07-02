@@ -6,8 +6,8 @@ const SearchExercises = () => {
     <Stack alignItems='center' mt='37px'
     justifyContent='center' p='20px'>
       <Typography fontWeight={700} sx={{
-        fontSize: {lg: '44px', xs:'30px'}
-      }}mb='50px' textAlign='center'>
+        fontSize: {lg: '44px', xs:'30px'}}}
+        mb='50px' textAlign='center'>
         Awesome Exercises you <br />
         Should Know
        </Typography>
@@ -17,7 +17,7 @@ const SearchExercises = () => {
           input:{fontWeight: '700', 
             border:'none', 
             borderRadius: '4px'},
-            width: {lg: '1170px', xs: '350px'}
+            width: {lg: '800px', xs: '350px'}
             ,
             backgroundcolor: '#fff',
             borderRadius:'40px'
@@ -33,7 +33,10 @@ const SearchExercises = () => {
           bgcolor: '#FF2625',
           color:'#fff',
           textTransform:'none',
-          width: {lg:'20px',xs:'12px'}
+          width: {lg:'20px',xs:'14px'},
+          height: '56px',
+          position:"absolute",
+          right:'0'
         }}>
           
         </Button>
