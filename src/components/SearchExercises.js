@@ -1,4 +1,4 @@
-import React, {useEffect, useState}from 'react';
+import React, {useEffect,useState}from 'react';
 import {Box, Button, Stack, TextField, Typography} from 
 '@mui/material';
 import { exerciseOptions, fetchData } from '../utils/fetchData';
@@ -62,8 +62,9 @@ const SearchExercises = ({setExercises,
         }}
           height='76px'
           value={search}
-          onChange={(e)=> setSearch(e.target.
-          value.toLowerCase())}
+          onChange={(e)=> setSearch(e.target.value.
+          toLowerCase()
+        )}
           placeholder='Search Exercises'
           type='text'
         />
