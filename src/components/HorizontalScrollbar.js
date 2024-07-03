@@ -3,10 +3,11 @@ import { Box } from '@mui/material';
 
 import BodyPart from './BodyPart';
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import 'react-horizontal-scrolling-menu/dist/styles.css';
 
 const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => {
   return (
-    <div>
+    <ScrollMenu>
         {data.map((item)=>(
             <Box
               key={item.id || item}
@@ -21,7 +22,7 @@ const HorizontalScrollbar = ({ data, bodyPart, setBodyPart }) => {
              </Box> 
         )
     )}
-     </div>
+     </ScrollMenu>
   )
 }
 
