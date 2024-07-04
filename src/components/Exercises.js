@@ -1,4 +1,4 @@
-import React, { useEffect,useState, } from 'react';
+import React, { useEffect,useState } from 'react';
 import  Pagination from '@mui/material/Pagination';
 import { Box, Stack, Typography } from '@mui/material';
 
@@ -42,7 +42,7 @@ return (
           {exercise}/>
         ))}
       </Stack>
-      <Stack mt="100px" alignItem="center">
+      <Stack mt="100px" alignItems="center">
         {exercises.length>9 && (
           <Pagination
             color='standard'
