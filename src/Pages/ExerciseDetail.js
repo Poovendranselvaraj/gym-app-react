@@ -30,7 +30,7 @@ const ExerciseDetail = () => {
   return (
     <Box>
       <Detail exerciseDetail= {exerciseDetail} />
-      <ExerciseVideo/>
+      <ExerciseVideos/>
       <SimilarExercises/>
     </Box>
   )
