@@ -25,21 +25,20 @@ const Exercises = ({exercises,setExercises,bodyPart}) => {
   window.scrollTo({top: 1800, behavior:'smooth'})
  }
 
- useEffect(()=> {
-  const fetchExercisesData= async()=> {
-    let exercisesData=[];
-
-    if(bodyPart==='all') {
-      exercisesData =await fetchData('https://exercisedb.p.rapidapi.com/exercises',
-      exerciseOptions);
-}  else { 
-  exercisesData=await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}',
-  exerciseOptions);
+ useEffect(()=>{
+  const fetchExercisesData=async()=>{
+    let exerciseData=[];
+    if(bodyPart==='all'){
+      exerciseData=await fetchData('https://exercisedb.p.rapidapi.com/exercises',exerciseOptions);
 }
-setExercises(exercisesData);
+  else{
+    exerciseData=await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,exerciseOptions);
   }
-  fetchExercisesData();
- },[bodyPart])
+  setExercises(exerciseData);
+}
+fetchExercisesData();
+},[bodyPart]);
+  
   
 
 return (
