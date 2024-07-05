@@ -62,8 +62,7 @@ const SearchExercises = ({setExercises,
     }}
           height='76px'
             value={search}
-          onChange={(e)=> setSearch(e.target.value.
-          toLowerCase()
+          onChange={(e)=> setSearch(e.target.value.toLowerCase()
         )}
           placeholder='Search Exercises'
           type='text'
@@ -88,8 +87,7 @@ onClick={handleSearch}
        <Box sx={{ position: 'relative', width: '100%', p: '20px'}}>
             <HorizontalScrollbar data={bodyParts}
             bodyPart={bodyPart} setBodyPart=
-            {setBodyPart} 
-            />
+            {setBodyPart} isBodyParts />
       
        </Box>
     </Stack>
