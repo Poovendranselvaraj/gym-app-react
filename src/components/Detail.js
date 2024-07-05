@@ -5,7 +5,7 @@ import BodyPartImage from '../assets/icons/body-part.png';
 import TargetImage from '../assets/icons/target.png';
 import EquipmentImage from '../assets/icons/equipment.png';
 
-const Detail = ({ exerciseDeatil }) => {
+const Detail = ({ exerciseDetail }) => {
     const { bodypart, gifUrl, name, target, equipment }= exerciseDetail;
     
     const extraDetail= [
@@ -37,7 +37,7 @@ const Detail = ({ exerciseDeatil }) => {
         exercises to target your abs. It will help you improve your
         mood and gain energy.
         </Typography> 
-        {extraDetail.map((item))=> (
+        {extraDetail.map((item)=> (
           <Stack key={item.name} direction="row" gap="24px" alignItems="center">
             <Button sx={{background: '#fff2db', borderRadius:'50%', width:'100px',
             height: '100px'}}>
