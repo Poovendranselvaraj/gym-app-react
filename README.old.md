@@ -1,1 +1,0 @@
-deployed link: https://poovis-gym.netlify.app
