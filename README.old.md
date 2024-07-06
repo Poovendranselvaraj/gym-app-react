@@ -1,3 +1,1 @@
-# gym-app-
-# doubt
-![alt text](image.png)
+deployed link: https://poovis-gym.netlify.app
