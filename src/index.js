@@ -9,6 +9,8 @@ const root=ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <BrowserRouter>
+  {/* browser router is used for routing   , react router is used for routing */}
     <App />
+    
    </BrowserRouter>
 );
